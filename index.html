@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        h1 {
+            text-align: center;
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .first-side, .second-side {
+            margin: 20px;
+        }
+        #memeCanvas {
+            border: 1px solid #000;
+        }
+        .input-container {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 20px;
+        }
+        input, select {
+            margin: 5px 0;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/fabric"></script>
+</head>
+<body>
+<h1>Meme Generator</h1>
+<div class="container">
+    <div class="first-side">
+        <div class="input-container">
+            <input type="file" id="imageInput" accept="image/*">
+            <input id="topText" placeholder="Top Text"/>
+            <input id="bottomText" placeholder="Bottom Text"/>
+            <label for="textColor">Text Color:</label>
+            <select id="textColor">
+                <option value="white">White</option>
+                <option value="black">Black</option>
+                <option value="red">Red</option>
+                <option value="blue">Blue</option>
+                <option value="green">Green</option>
+            </select>
+            <label for="fontSize">Font Size:</label>
+            <input type="number" id="fontSize" value="30" min="1">
+        </div>
+        <button id="generateBtn">Generate Meme</button>
+    </div>
+    <div class="second-side">
+        <canvas id="memeCanvas" width="500" height="500"></canvas>
+        <a id="downloadLink" download="meme.png" href="#">
+            <button style="margin-top: 10px">Save Meme</button>
+        </a>
+    </div>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
